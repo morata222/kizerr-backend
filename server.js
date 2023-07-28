@@ -31,7 +31,7 @@ app.use((err , req , res , next) => {
 const connect = async () => {
   try {
     await mongoose.connect(process.env.CONNECT_KEY) 
-    console.log(`Example app listening on port http://localhost:${port}`);
+    console.log(`app listening on port http://localhost:${port}`);
   } catch (error) {
     console.log(error);
   }
