@@ -28,7 +28,13 @@ export const register = async (req, res, next) => {
     );
 
     res
-      .cookie("accessToken", token)
+      .cookie("accessToken", token , 
+              {
+                secure: true, 
+                httpOnly: true, 
+                 sameSite: 'none' 
+              }
+             )
       .status(200)
       .send(isUser);
   } catch (err) {
