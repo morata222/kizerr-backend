@@ -28,9 +28,7 @@ export const register = async (req, res, next) => {
     );
 
     res
-      .cookie("accessToken", token, {
-        httpOnly: true,
-      })
+      .cookie("accessToken", token)
       .status(200)
       .send(isUser);
   } catch (err) {
