@@ -11,6 +11,7 @@ import cors from 'cors'
 dotenv.config()
 const app = express()
 const port = 3000
+app.set("trust proxy", 1);
 app.use(json())
 app.use(cookieParser())
 app.use(cors({origin:"https://kizerr.onrender.com",credentials:true}))
