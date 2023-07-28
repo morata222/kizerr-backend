@@ -14,7 +14,7 @@ const port = 3000
 app.set("trust proxy", 1);
 app.use(json())
 app.use(cookieParser())
-app.use(cors({origin:"https://kizerr.pages.dev",credentials:true ,exposedHeaders: \["Set-cookie"\]}))
+app.use(cors({origin:"https://kizerr.pages.dev",credentials:true ,exposedHeaders: ["Set-Cookie"]}))
 app.use('/', userRouter)
 app.use('/', authRouter)
 app.use('/', gigRouter)
