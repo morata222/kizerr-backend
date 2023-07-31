@@ -16,6 +16,24 @@ const ConversationSchema = new Schema(
       type: String,
       required: true,
     },
+    
+      buyerUsername: {
+        type: String,
+        required: true,
+      },
+      sellerUsername: {
+        type: String,
+        required: true,
+      },
+      buyerImg: {
+        type: String,
+        required: false,
+      },
+      sellerImg: {
+        type: String,
+        required: false,
+      },
+    
     readBySeller: {
       type: Boolean,
       required: true,

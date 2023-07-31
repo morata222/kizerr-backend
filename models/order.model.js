@@ -35,6 +35,14 @@ const OrderSchema = new Schema(
       type: String,
       required:true
     },
+    sellerUsername:{
+      type: String,
+      required:true
+    },
+    sellerCountry:{
+      type: String,
+      required:true
+    },
     isCompleted: {
       type: Boolean,
       default: false,
