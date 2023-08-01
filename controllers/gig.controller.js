@@ -43,7 +43,7 @@ export const getGigs = async (req, res , next) => {
   const filters = {
     ...(q.cat && {cat:q.cat}),
     ...(q.userId && {userId:q.userId}),
-    ...(q.title && {title:{$regex:q.search,$options:"i"}}),
+    ...(q.search && {title:{$regex:q.search,$options:"i"}}),
     ...((q.min || q.max) && {
       price:{...(q.min && {$gte:q.min}) , ...(q.max && {$lte:q.max})}
     }),
