@@ -6,7 +6,8 @@ export const createMessage = async (req, res , next) => {
   const newMessage = new Message({
     conversationId:req.body.conversationId,
     userId:req.userId,
-    desc:req.body.desc
+    desc:req.body.desc,
+    img:req.body.img
   })
   try {
     const savedMessage = await newMessage.save();
