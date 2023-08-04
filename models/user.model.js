@@ -40,7 +40,15 @@ const userSchema = new Schema({
     type: Boolean,
     default:false
   },
-},{
+  skills:{
+    type:[String],
+    required:false
+  },
+  languages:{
+    type:[String],
+    required:false
+  },
+  },{
   timestamps:true
 });
 
