@@ -16,7 +16,7 @@ const port = 3000
 app.use(json())
 app.use(cookieParser())
 const corsOptions ={
-  origin:'https://kizerr.pages.dev', 
+  origin:'*', 
   credentials:true,         
   optionSuccessStatus:200
 }
