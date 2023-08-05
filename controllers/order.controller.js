@@ -8,7 +8,7 @@ export const PaymentIntent = async (req, res, next) => {
   const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
   const gig = await Gig.findById(req.params.id);
   const seller = await User.findById(gig.userId);
-  if(seller === req.userId) next(createError(401, "You can't buy your own gig"));
+  if(seller === req.userId) next(createError(405, "You can't buy your own gig"));
 
   const paymentIntent = await stripe.paymentIntents.create({
     amount: gig.price * 100,
