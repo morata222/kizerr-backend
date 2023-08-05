@@ -10,9 +10,9 @@ import orderRouter from  './routes/order.route.js'
 import conversationRouter from './routes/conversation.route.js'
 import messageRouter from './routes/message.route.js'
 import cors from 'cors'
+const app = express()
 app.use(cors({origin:"https://localhost:5173",credentials:true ,exposedHeaders: ["Set-Cookie"]}))
 dotenv.config()
-const app = express()
 const port = 3000
 app.use(json())
 app.use(cookieParser())
