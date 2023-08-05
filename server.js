@@ -10,12 +10,13 @@ import orderRouter from  './routes/order.route.js'
 import conversationRouter from './routes/conversation.route.js'
 import messageRouter from './routes/message.route.js'
 import cors from 'cors'
+app.use(cors({origin:"https://localhost:5173",credentials:true ,exposedHeaders: ["Set-Cookie"]}))
 dotenv.config()
 const app = express()
 const port = 3000
 app.use(json())
 app.use(cookieParser())
-app.use(cors({origin:"https://localhost:5173",credentials:true ,exposedHeaders: ["Set-Cookie"]}))
+// app.use(cors({origin:"https://localhost:5173",credentials:true ,exposedHeaders: ["Set-Cookie"]}))
 app.use('/', userRouter)
 app.use('/', authRouter) 
 app.use('/', gigRouter)
