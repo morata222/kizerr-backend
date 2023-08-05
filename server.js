@@ -15,7 +15,7 @@ const app = express()
 const port = 3000
 app.use(json())
 app.use(cookieParser())
-app.use(cors({origin:"https://kizerr.pages.dev",credentials:true ,exposedHeaders: ["Set-Cookie"]}))
+app.use(cors({origin:"https://localhost:5173",credentials:true ,exposedHeaders: ["Set-Cookie"]}))
 app.use('/', userRouter)
 app.use('/', authRouter) 
 app.use('/', gigRouter)

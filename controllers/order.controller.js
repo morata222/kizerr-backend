@@ -21,6 +21,7 @@ export const PaymentIntent = async (req, res, next) => {
   res.status(200).send({
     clientSecret: paymentIntent.client_secret,
   });
+  res.setHeader('Access-Control-Allow-Origin', 'https://localhost:5173');
 };
 
 export const getOrders = async (req, res, next) => {
