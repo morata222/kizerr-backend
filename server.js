@@ -21,6 +21,13 @@ const corsOptions ={
   optionSuccessStatus:200
 }
 app.use(cors(corsOptions));
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  // Add other necessary headers if needed
+  res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  next();
+});
 app.use('/', userRouter)
 app.use('/', authRouter) 
 app.use('/', gigRouter)
@@ -33,13 +40,7 @@ app.use((err , req , res , next) => {
    const errorMessage = err.message || "Something went wrong";
    return res.status(errorStatus).send(errorMessage);   
 } )
-app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  // Add other necessary headers if needed
-  res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-  next();
-});
+
 // ...
 
 const connect = async () => {
