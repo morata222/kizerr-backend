@@ -16,18 +16,17 @@ const port = 3000
 app.use(json())
 app.use(cookieParser())
 const corsOptions ={
-  origin:'https://kizerr.pages.dev', 
+  origin:['https://kizerr.pages.dev'], 
   credentials:true,         
   optionSuccessStatus:200
 }
 app.use(cors(corsOptions));
-app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', 'https://kizerr.pages.dev');
-  // Add other necessary headers if needed
-  res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-  next();
-});
+// app.use((req, res, next) => {
+//   res.setHeader('Access-Control-Allow-Origin', 'https://kizerr.pages.dev');
+//   res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+//   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+//   next();
+// });
 app.use('/', userRouter)
 app.use('/', authRouter) 
 app.use('/', gigRouter)
