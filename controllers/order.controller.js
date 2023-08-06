@@ -5,7 +5,7 @@ import createError from "../utils/CreateError.js";
 import Stripe from "stripe";
 
 export const PaymentIntent = async (req, res, next) => {
-  const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+  const stripe = new Stripe("sk_test_51NZngbICyTA9BiM2Kxt8hh3as09dLUS91ciQvLdY351hW8SkPaVzViFOJHf6LWF2RQW1MOxMOhZy9dYZ92akIloV009vsWRJIg");
   const gig = await Gig.findById(req.params.id);
   const seller = await User.findById(gig.userId);
   if(seller === req.userId) next(createError(405, "You can't buy your own gig"));
