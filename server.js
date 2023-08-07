@@ -45,7 +45,7 @@ app.use((err , req , res , next) => {
 
 const connect = async () => {
   try {
-    await mongoose.connect(process.env.CONNECT_KEY || 'mongodb://ADMIN:omarfathy2002@ac-d8fcgtn-shard-00-00.2vyvojj.mongodb.net:27017,ac-d8fcgtn-shard-00-01.2vyvojj.mongodb.net:27017,ac-d8fcgtn-shard-00-02.2vyvojj.mongodb.net:27017/fiverrDB?ssl=true&replicaSet=atlas-scdggg-shard-0&authSource=admin&retryWrites=true&w=majority') 
+    await mongoose.connect(process.env.CONNECT_KEY || 'mongodb://ADMIN:omarfathy2002@ac-d8fcgtn-shard-00-00.2vyvojj.mongodb.net:27017,ac-d8fcgtn-shard-00-01.2vyvojj.mongodb.net:27017,ac-d8fcgtn-shard-00-02.2vyvojj.mongodb.net:27017/fiverrDB?ssl=true&replicaSet=atlas-scdggg-shard-0&authSource=admin&retryWrites=true&w=majority'||3000) 
     console.log(`app listening on port http://localhost:${port}`);
   } catch (error) {
     console.log(error);
