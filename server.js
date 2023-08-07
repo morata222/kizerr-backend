@@ -12,7 +12,7 @@ import messageRouter from './routes/message.route.js'
 import cors from 'cors'
 dotenv.config()
 const app = express()
-const port = 3000
+const port = 'https://kizerr.up.railway.app/' || 3000
 app.use(json())
 app.use(cookieParser())
 const corsOptions ={
