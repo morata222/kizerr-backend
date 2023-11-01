@@ -28,9 +28,6 @@ app.use(cors(corsOptions));
 //   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
 //   next();
 // });
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
 app.use('/', userRouter)
 app.use('/', authRouter) 
 app.use('/', gigRouter)
