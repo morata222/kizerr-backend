@@ -35,7 +35,7 @@ app.use((err , req , res , next) => {
    return res.status(errorStatus).send(errorMessage);   
 } )
 app.get('/' , (req , res) =>{
-  res.send(<h1>api is working</h1>)
+  res.send("api is running");
 })
 
 // ...
