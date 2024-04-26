@@ -34,6 +34,9 @@ app.use((err , req , res , next) => {
    const errorMessage = err.message || "Something went wrong";
    return res.status(errorStatus).send(errorMessage);   
 } )
+app.get('/' , (req , res) =>{
+  res.send(<h1>api is working</h1>)
+})
 
 // ...
 
