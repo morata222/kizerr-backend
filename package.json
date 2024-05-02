@@ -2,14 +2,11 @@
   "name": "kizerrapi",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "index.js",
   "type": "module",
   "scripts": {
     "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "engines": {
-    "node": "18.16.0"
   },
   "keywords": [],
   "author": "",
