@@ -15,13 +15,12 @@ const app = express()
 const port = process.env.PORT || 3000
 app.use(json())
 app.use(cookieParser())
-// const corsOptions ={
-//   origin:['https://kizerr.pages.dev'], 
-//   credentials:true,         
-//   optionSuccessStatus:200
-// }
-
-app.use(cors());
+const corsOptions ={
+  origin:['https://kizerr.pages.dev'], 
+  credentials:true,         
+  optionSuccessStatus:200
+}
+app.use(cors(corsOptions));
 app.use('/', userRouter)
 app.use('/', authRouter) 
 app.use('/', gigRouter)
