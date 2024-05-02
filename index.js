@@ -12,7 +12,7 @@ import messageRouter from './routes/message.route.js'
 import cors from 'cors'
 dotenv.config()
 const app = express()
-const port = process.env.PORT || 3200
+const port = process.env.PORT || 3000
 app.use(json())
 app.use(cookieParser())
 const corsOptions ={
